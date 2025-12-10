@@ -1,11 +1,11 @@
-export type WinnerType = 'device' | 'player' | 'none'
+export type WinnerType = 'dealer' | 'player' | 'none'
 
 interface WinnerAnnouncementProps {
   winner?: WinnerType
 }
 
 const textColorWinner: Record<WinnerType, string> = {
-  device: 'text-pink-500',
+  dealer: 'text-pink-500',
   player: 'text-emerald-500',
   none: 'text-blue-300'
 }
