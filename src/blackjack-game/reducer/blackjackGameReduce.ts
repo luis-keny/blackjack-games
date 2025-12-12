@@ -52,7 +52,9 @@ const getNaipeScore = (naipeUrl: string): number => {
   return parseInt(naipeString)
 }
 
-const declareWinner = (dealerScore: number, playerScore: number): NonNullable<WinnerType> => {
+export const declareWinner = (dealerScore: number, playerScore: number): NonNullable<WinnerType> => {
+  if (dealerScore < MIN_SCORE_DEALER) throw new Error(`The dealer's score should be higher or equalt than the ${MIN_SCORE_DEALER}`)
+
   if ((dealerScore > WIN_SCORE && playerScore > WIN_SCORE) || playerScore === dealerScore) {
     return 'none'
   }
